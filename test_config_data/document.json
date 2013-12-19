@@ -1,0 +1,53 @@
+{
+  "table": {
+    "create": true,
+    "source_data":"/Users/paulcrease/Documents/Projects/SmartData/track_points.csv",
+    "name": "taras_gps_test",
+    "rowkey":{
+        "isComposite":true,
+        "hasSpatialIndex":false,
+        "source_fields":"X,Y,time",
+    	"delimiter":"-"
+    },
+    "families":[{
+        "geom":[{
+            "columns":[{
+                "lon":{
+                "name":"lon",
+                "type":"double",
+                "source_field":"X"
+                },
+                "lat":{
+                "name":"lat",
+                "type":"double",
+                "source_field":"Y"
+                },
+                "time":{
+                "name":"time",
+                "type":"timestamp",
+                "source_field":"time"
+                }
+            }]
+        }],
+        "attributes":[{
+            "columns":[{
+                "lon":{
+                "name":"lon",
+                "type":"double",
+                "source_field":"X"
+                },
+                "lat":{
+                "name":"lat",
+                "type":"double",
+                "source_field":"Y"
+                },
+                "time":{
+                "name":"time",
+                "type":"timestamp",
+                "source_field":"time"
+                }
+            }]
+        }]
+    }]
+  }
+}
