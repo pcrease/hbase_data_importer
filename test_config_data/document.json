@@ -1,52 +1,56 @@
 {
   "table": {
     "create": true,
-    "source_data":"/Users/paulcrease/Documents/Projects/SmartData/track_points.csv",
-    "name": "taras_gps_test",
+    "source_data":"/Users/paulcrease/Documents/JLR_data_sources/2013_11/origin_destination.od",
+    "name": "trips",
+    "constants":{
+        "cT":"<currentTime>",
+        "userID":"JLR",
+        "deviceID":"FE34_7PG"
+    },
     "rowkey":{
+    	"hasSalting":true,
+    	"saltingMethod":"alphabet",
         "isComposite":true,
         "hasSpatialIndex":false,
-        "source_fields":"X,Y,time",
+        "source_fields":"cT,userID,deviceID,or_time",
     	"delimiter":"-"
     },
     "families":[{
         "geom":[{
             "columns":[{
-                "lon":{
-                "name":"lon",
+                "ory":{
+                "name":"ory",
                 "type":"double",
-                "source_field":"X"
+                "source_field":"ory"
                 },
-                "lat":{
-                "name":"lat",
+                "orx":{
+                "name":"orx",
                 "type":"double",
-                "source_field":"Y"
+                "source_field":"orx"
                 },
-                "time":{
-                "name":"time",
+                "or_time":{
+                "name":"or_time",
                 "type":"timestamp",
-                "source_field":"time"
+                "source_field":"or_time"
+                },
+                "desty":{
+                "name":"desty",
+                "type":"double",
+                "source_field":"desty"
+                },
+                "destx":{
+                "name":"destx",
+                "type":"double",
+                "source_field":"destx"
+                },
+                "dest_time":{
+                "name":"dest_time",
+                "type":"timestamp",
+                "source_field":"dest_time"
                 }
             }]
-        }],
-        "attributes":[{
-            "columns":[{
-                "lon":{
-                "name":"lon",
-                "type":"double",
-                "source_field":"X"
-                },
-                "lat":{
-                "name":"lat",
-                "type":"double",
-                "source_field":"Y"
-                },
-                "time":{
-                "name":"time",
-                "type":"timestamp",
-                "source_field":"time"
-                }
-            }]
+        
         }]
     }]
   }

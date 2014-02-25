@@ -2,6 +2,7 @@ package com.hbase.import_tool.spatial.test;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -16,8 +17,9 @@ public class ImportTest {
 	/**
 	 * @param args
 	 * @throws IOException 
+	 * @throws ParseException 
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ParseException {
 		HbaseDataModel hbaseDataModel= new HbaseDataModel();
 		hbaseDataModel
 				.generateModelFromConfigFile(("test_config_data/document.json"));
